@@ -72,14 +72,14 @@ const u8 STRING_MANUFACTURER[] PROGMEM = USB_MANUFACTURER;
 
 #ifdef CDC_ENABLED
 const DeviceDescriptor USB_DeviceDescriptorIAD =
-	D_DEVICE(0xEF,0x02,0x01,64,USB_VID,USB_PID,0x100,IMANUFACTURER,IPRODUCT,ISERIAL,1);
+	D_DEVICE(0xEF,0x02,0x01,64,USB_VID,USB_PID,0x3901,IMANUFACTURER,IPRODUCT,ISERIAL,1);
 #else // CDC_DISABLED
 // The default descriptor uses USB class OxEF, subclass 0x02 with protocol 1
 // which means "Interface Association Descriptor" - that's needed for the CDC,
 // but doesn't make much sense as a default for custom devices when CDC is disabled.
 // (0x00 means "Use class information in the Interface Descriptors" which should be generally ok)
 const DeviceDescriptor USB_DeviceDescriptorIAD =
-	D_DEVICE(0x00,0x00,0x00,64,USB_VID,USB_PID,0x100,IMANUFACTURER,IPRODUCT,ISERIAL,1);
+	D_DEVICE(0x00,0x00,0x00,64,USB_VID,USB_PID,0x3901,IMANUFACTURER,IPRODUCT,ISERIAL,1);
 #endif
 
 //==================================================================
